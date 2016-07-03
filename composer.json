@@ -10,19 +10,20 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "artesaos/restinga": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*"
     },
     "autoload": {
         "psr-4": {
-            "Mateusjatenee\\IuguPhp\\": "src/"
+            "Mateusjatenee\\Iugu\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mateusjatenee\\IuguPhp\\Tests\\": "tests/"
+            "Mateusjatenee\\Iugu\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable",
