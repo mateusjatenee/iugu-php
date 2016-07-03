@@ -1,0 +1,32 @@
+{
+    "name": "mateusjatenee/iugu-php",
+    "description": "PHP project.",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateus Guimarães",
+            "email": "mateus.jatene@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mateusjatenee\\IuguPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mateusjatenee\\IuguPhp\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "test": "phpunit"
+    }
+}
