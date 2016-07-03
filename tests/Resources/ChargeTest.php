@@ -29,8 +29,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        var_dump($charge);
-
         $this->assertNotNull($charge);
         $this->assertNotNull($charge->invoice_id);
         $this->assertEquals($charge->success, true);
