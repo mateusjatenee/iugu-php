@@ -16,6 +16,8 @@ class SubAccountTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_can_list_all_subaccounts()
     {
+        $this->markTestSkipped();
+
         Iugu::setApiKey(getenv('IUGU_PRODUCTION_API_KEY'));
 
         $sub_account = new SubAccount();
