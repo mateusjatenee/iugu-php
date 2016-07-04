@@ -3,11 +3,9 @@
 namespace Mateusjatenee\Iugu;
 
 use Artesaos\Restinga\Container;
-use Mateusjatenee\Iugu\ServiceDescriptor;
 
 class Iugu
 {
-
     /**
      * @param $key
      */
@@ -16,5 +14,4 @@ class Iugu
         $descriptor = new ServiceDescriptor($key);
         Container::register($descriptor);
     }
-
 }
