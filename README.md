@@ -1,5 +1,8 @@
 iugu-php
-================
+================  
+
+[![Build Status](https://travis-ci.org/mateusjatenee/iugu-php.svg?branch=master)](https://travis-ci.org/mateusjatenee/iugu-php)
+
 API para integração com a Iugu.
 
 #### Installation via Composer
