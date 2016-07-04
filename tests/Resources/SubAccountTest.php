@@ -3,7 +3,7 @@
 use Mateusjatenee\Iugu\Iugu;
 use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
 
-class MarketPlaceTest extends \PHPUnit_Framework_TestCase
+class SubAccountTest extends \PHPUnit_Framework_TestCase
 {
     use HelpersTrait;
 
