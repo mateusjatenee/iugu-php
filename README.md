@@ -5,7 +5,11 @@ API para integração com a Iugu.
 #### Installation via Composer
 ``` bash
 $ composer require mateusjatenee/iugu-php
-```
+```  
+
+#### Instruções de uso  
+
+Só dar uma passadinha na [Wiki](https://github.com/mateusjatenee/iugu-php/wiki). ;)
 
 #### Running tests
 ``` bash
