@@ -27,7 +27,7 @@ class Customer extends Resource
     {
         $this->attributes['email'] = $data['email'];
         $this->attributes['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->notes = isset($data['notes']) ? $data['notes'] : null;
+        $this->attributes['notes'] = isset($data['notes']) ? $data['notes'] : null;
     }
 
 }
