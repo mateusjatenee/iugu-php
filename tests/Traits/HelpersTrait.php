@@ -30,7 +30,7 @@ trait HelpersTrait
     {
         $customer = new Customer();
 
-        $customer->addInformation([
+        $customer->setInformation([
             'name' => 'John Doe',
             'email' => 'john@doe.com',
         ]);

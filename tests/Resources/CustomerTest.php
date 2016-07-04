@@ -21,7 +21,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
 
         $customer = new Customer();
 
-        $customer->addInformation([
+        $customer->setInformation([
             'name' => 'John Doe',
             'email' => 'john@doe.com',
         ]);
@@ -46,6 +46,25 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($found_customer->id, $created_customer->id);
         $this->assertEquals($found_customer->email, $created_customer->email);
         $this->assertEquals($found_customer->name, $created_customer->name);
+
+    }
+
+    /** @test */
+    public function it_can_update_an_user()
+    {
+        $created_customer = $this->createCustomer();
+
+        $customer = new Customer();
+
+        $found_customer = $customer->find($created_customer->id);
+
+        $found_customer->name = 'Kelly';
+
+        $found_customer->update();
+
+        $found_customer = $customer->find($created_customer->id);
+
+        $this->assertEquals($found_customer->name, 'Kelly');
 
     }
 
