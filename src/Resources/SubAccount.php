@@ -7,7 +7,7 @@ use Artesaos\Restinga\Http\Format\Receive\ReceiveJson;
 use Artesaos\Restinga\Http\Format\Receive\ReceiveJsonErrors;
 use Artesaos\Restinga\Http\Format\Send\SendJson;
 
-class MarketPlace extends Resource
+class SubAccount extends Resource
 {
     use ReceiveJson, SendJson;
 
@@ -19,8 +19,15 @@ class MarketPlace extends Resource
 
     protected $identifier = 'id';
 
-    protected $collection_root = null;
+    protected $collection_root = 'items';
 
     protected $item_root = null;
+
+    public function getAll()
+    {
+        $this->name = 'marketplace';
+
+        return parent::getAll();
+    }
 
 }
