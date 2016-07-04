@@ -19,15 +19,15 @@ class Customer extends Resource
 
     protected $identifier = 'id';
 
-    protected $collection_root = 'customers';
+    protected $collection_root = 'items';
 
     protected $item_root = null;
 
-    public function addInformation(array $data)
+    public function setInformation(array $data)
     {
-        $this->attributes['email'] = $data['email'];
-        $this->attributes['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->attributes['notes'] = isset($data['notes']) ? $data['notes'] : null;
+        foreach ($data as $key => $attribute) {
+            $this->attributes[$key] = $attribute;
+        }
     }
 
 }

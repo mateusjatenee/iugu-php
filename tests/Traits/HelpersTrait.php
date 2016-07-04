@@ -2,6 +2,7 @@
 
 namespace Mateusjatenee\Iugu\Tests\Traits;
 
+use Mateusjatenee\Iugu\Resources\Customer;
 use Mateusjatenee\Iugu\Resources\Token;
 
 trait HelpersTrait
@@ -23,5 +24,23 @@ trait HelpersTrait
         $token->save();
 
         return $token;
+    }
+
+    public function createCustomer($override = null)
+    {
+        if (is_null($override)) {
+            $override = [
+                'name' => 'John Doe',
+                'email' => 'john@doe.com',
+            ];
+        }
+
+        $customer = new Customer();
+
+        $customer->setInformation($override);
+
+        $customer->save();
+
+        return $customer;
     }
 }
