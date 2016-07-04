@@ -26,14 +26,18 @@ trait HelpersTrait
         return $token;
     }
 
-    public function createCustomer()
+    public function createCustomer($override = null)
     {
+        if (is_null($override)) {
+            $override = [
+                'name' => 'John Doe',
+                'email' => 'john@doe.com',
+            ];
+        }
+
         $customer = new Customer();
 
-        $customer->setInformation([
-            'name' => 'John Doe',
-            'email' => 'john@doe.com',
-        ]);
+        $customer->setInformation($override);
 
         $customer->save();
 

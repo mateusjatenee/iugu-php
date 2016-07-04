@@ -16,7 +16,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function it_can_create_an_user()
+    public function it_can_create_a_customer()
     {
 
         $customer = new Customer();
@@ -35,7 +35,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function it_can_find_an_user()
+    public function it_can_find_a_customer()
     {
         $created_customer = $this->createCustomer();
 
@@ -50,7 +50,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function it_can_update_an_user()
+    public function it_can_update_a_customer()
     {
         $created_customer = $this->createCustomer();
 
@@ -69,7 +69,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_user()
+    public function it_can_delete_a_customer()
     {
         $customer = $this->createCustomer();
 
@@ -78,6 +78,20 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $customer = $customer->find($customer->id);
 
         $this->assertFalse($customer);
+    }
+
+    /** @test */
+    public function it_can_list_all_customers()
+    {
+
+        $customer = new Customer();
+
+        $customers = $customer->all();
+
+        foreach ($customers as $customer) {
+            $this->assertNotNull($customer->id);
+            $this->assertNotNull($customer->name);
+        }
     }
 
 }

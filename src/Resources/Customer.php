@@ -19,7 +19,7 @@ class Customer extends Resource
 
     protected $identifier = 'id';
 
-    protected $collection_root = 'customers';
+    protected $collection_root = 'items';
 
     protected $item_root = null;
 
