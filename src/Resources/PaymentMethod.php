@@ -28,6 +28,8 @@ class PaymentMethod extends Resource
         foreach ($data as $key => $attribute) {
             $this->attributes[$key] = $attribute;
         }
+
+        return $this;
     }
 
 }
