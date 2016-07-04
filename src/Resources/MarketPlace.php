@@ -23,6 +23,20 @@ class MarketPlace extends Resource
 
     protected $item_root = null;
 
+    public function requestVerification(array $data)
+    {
+        $this->name = "accounts/{$this->account_id}/request_verification";
+
+        $this->attributes = [];
+
+        foreach ($data as $key => $attribute) {
+            $this->attributes[$key] = $attribute;
+        }
+
+        return parent::save();
+
+    }
+
     public function setSubAccountInformation(array $data)
     {
         $this->name = 'marketplace/create_account';

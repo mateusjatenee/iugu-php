@@ -46,4 +46,20 @@ class SubAccountTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Test subaccount', $found_client->name);
 
     }
+
+    /** @test */
+    public function it_can_request_an_accounts_verification()
+    {
+
+        $this->markTestIncomplete('todo');
+
+        $subaccount = $this->createSubAccount();
+
+        Iugu::setApiKey($subaccount->user_token);
+
+        $subaccount->requestVerification([
+            'price_range' => '100',
+        ]);
+
+    }
 }
