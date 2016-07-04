@@ -6,23 +6,20 @@ use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
 
 class CustomerTest extends \PHPUnit_Framework_TestCase
 {
-
     use HelpersTrait;
 
     public function setUp()
     {
         Iugu::setApiKey(getenv('IUGU_API_KEY'));
-
     }
 
     /** @test */
     public function it_can_create_a_customer()
     {
-
         $customer = new Customer();
 
         $customer->setInformation([
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'email' => 'john@doe.com',
         ]);
 
@@ -31,7 +28,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($customer->id);
         $this->assertEquals($customer->email, 'john@doe.com');
         $this->assertEquals($customer->name, 'John Doe');
-
     }
 
     /** @test */
@@ -46,7 +42,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($found_customer->id, $created_customer->id);
         $this->assertEquals($found_customer->email, $created_customer->email);
         $this->assertEquals($found_customer->name, $created_customer->name);
-
     }
 
     /** @test */
@@ -65,7 +60,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
         $found_customer = $customer->find($created_customer->id);
 
         $this->assertEquals($found_customer->name, 'Kelly');
-
     }
 
     /** @test */
@@ -83,7 +77,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_can_list_all_customers()
     {
-
         $customer = new Customer();
 
         $customers = $customer->all();
@@ -93,5 +86,4 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
             $this->assertNotNull($customer->name);
         }
     }
-
 }

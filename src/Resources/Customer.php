@@ -29,5 +29,4 @@ class Customer extends Resource
             $this->attributes[$key] = $attribute;
         }
     }
-
 }

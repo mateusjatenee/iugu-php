@@ -29,7 +29,5 @@ class Charge extends Resource
         $this->payer = isset($data['payer']) ? $data['payer'] : null;
 
         $this->save();
-
     }
-
 }
