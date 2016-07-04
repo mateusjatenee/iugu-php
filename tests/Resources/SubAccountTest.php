@@ -30,18 +30,20 @@ class SubAccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    // public function it_can_find_a_subaccount()
-    // {
-    //     // $this->markTestIncomplete('Incomplete');
+    public function it_can_find_a_subaccount()
+    {
+        $this->markTestIncomplete('Incomplete');
 
-    //     $client_id = getenv('EXAMPLE_ACCOUNT_ID');
+        Iugu::setApiKey(getenv('EXAMPLE_ACCOUNT_TOKEN'));
 
-    //     $sub_account = new SubAccount();
+        $client_id = getenv('EXAMPLE_ACCOUNT_ID');
 
-    //     $sub_account->find($client_id);
+        $sub_account = new SubAccount();
 
-    //     // $this->assertEquals($client_id, $sub_account->id);
-    //     // $this->assertEquals('Test subaccount', $sub_account->name);
+        $found_client = $sub_account->find($client_id);
 
-    // }
+        $this->assertEquals($client_id, $found_client->id);
+        $this->assertEquals('Test subaccount', $found_client->name);
+
+    }
 }
