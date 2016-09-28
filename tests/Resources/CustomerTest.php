@@ -1,89 +1,28 @@
 <?php
 
-use Mateusjatenee\Iugu\Iugu;
-use Mateusjatenee\Iugu\Resources\Customer;
-use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
+namespace Mateusjatenee\Iugu\Tests\Resources;
 
-class CustomerTest extends \PHPUnit_Framework_TestCase
+use Mateusjatenee\Iugu\Resources\Customer;
+use Mateusjatenee\Iugu\Tests\TestCase;
+
+class CustomerTest extends TestCase
 {
-    use HelpersTrait;
 
     public function setUp()
     {
-        Iugu::setApiKey(getenv('IUGU_API_KEY'));
+        $this->customer = new Customer;
+        parent::setUp();
     }
 
     /** @test */
-    public function it_can_create_a_customer()
+    public function it_sets_a_customer_info()
     {
-        $customer = new Customer();
-
-        $customer->setInformation([
-            'name'  => 'John Doe',
-            'email' => 'john@doe.com',
+        $this->customer->setInformation([
+            'name' => 'John',
+            'email' => 'foo@bar.com',
         ]);
 
-        $customer->save();
-
-        $this->assertNotNull($customer->id);
-        $this->assertEquals($customer->email, 'john@doe.com');
-        $this->assertEquals($customer->name, 'John Doe');
-    }
-
-    /** @test */
-    public function it_can_find_a_customer()
-    {
-        $created_customer = $this->createCustomer();
-
-        $customer = new Customer();
-
-        $found_customer = $customer->find($created_customer->id);
-
-        $this->assertEquals($found_customer->id, $created_customer->id);
-        $this->assertEquals($found_customer->email, $created_customer->email);
-        $this->assertEquals($found_customer->name, $created_customer->name);
-    }
-
-    /** @test */
-    public function it_can_update_a_customer()
-    {
-        $created_customer = $this->createCustomer();
-
-        $customer = new Customer();
-
-        $found_customer = $customer->find($created_customer->id);
-
-        $found_customer->name = 'Kelly';
-
-        $found_customer->update();
-
-        $found_customer = $customer->find($created_customer->id);
-
-        $this->assertEquals($found_customer->name, 'Kelly');
-    }
-
-    /** @test */
-    public function it_can_delete_a_customer()
-    {
-        $customer = $this->createCustomer();
-
-        $customer->destroy();
-
-        $customer = $customer->find($customer->id);
-
-        $this->assertFalse($customer);
-    }
-
-    /** @test */
-    public function it_can_list_all_customers()
-    {
-        $customer = new Customer();
-
-        $customers = $customer->all();
-
-        foreach ($customers as $customer) {
-            $this->assertNotNull($customer->id);
-            $this->assertNotNull($customer->name);
-        }
+        $this->assertEquals($this->customer->name, 'John');
+        $this->assertEquals($this->customer->email, 'foo@bar.com');
     }
 }

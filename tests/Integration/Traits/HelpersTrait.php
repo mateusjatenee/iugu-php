@@ -1,6 +1,6 @@
 <?php
 
-namespace Mateusjatenee\Iugu\Tests\Traits;
+namespace Mateusjatenee\Iugu\Tests\Integration\Traits;
 
 use Mateusjatenee\Iugu\Iugu;
 use Mateusjatenee\Iugu\Resources\Customer;
@@ -9,6 +9,7 @@ use Mateusjatenee\Iugu\Resources\Token;
 
 trait HelpersTrait
 {
+
     public function generateToken()
     {
         $token = new Token();

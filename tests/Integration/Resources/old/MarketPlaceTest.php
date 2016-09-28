@@ -2,7 +2,7 @@
 
 use Mateusjatenee\Iugu\Iugu;
 use Mateusjatenee\Iugu\Resources\MarketPlace;
-use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
+use Mateusjatenee\Iugu\Tests\Integration\Traits\HelpersTrait;
 
 class MarketPlaceTest extends \PHPUnit_Framework_TestCase
 {

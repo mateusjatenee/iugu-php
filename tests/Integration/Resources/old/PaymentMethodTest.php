@@ -1,7 +1,7 @@
 <?php
 
 use Mateusjatenee\Iugu\Iugu;
-use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
+use Mateusjatenee\Iugu\Tests\Integration\Traits\HelpersTrait;
 
 class PaymentMethodTest extends \PHPUnit_Framework_TestCase
 {

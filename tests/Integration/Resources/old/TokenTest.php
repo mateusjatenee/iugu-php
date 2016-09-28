@@ -5,6 +5,7 @@ use Mateusjatenee\Iugu\Resources\Token;
 
 class TokenTest extends \PHPUnit_Framework_TestCase
 {
+
     /** @test */
     public function it_can_generate_a_token()
     {
@@ -13,13 +14,13 @@ class TokenTest extends \PHPUnit_Framework_TestCase
         $token = new Token();
 
         $token->setCreditCardInfo([
-            'account_id'         => getenv('IUGU_ACCOUNT_ID'),
-            'number'             => '4111111111111111',
+            'account_id' => getenv('IUGU_ACCOUNT_ID'),
+            'number' => '4111111111111111',
             'verification_value' => '123',
-            'first_name'         => 'John',
-            'last_name'          => 'Doe',
-            'month'              => '11',
-            'year'               => '2016',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'month' => '11',
+            'year' => '2016',
         ]);
 
         $token->save();

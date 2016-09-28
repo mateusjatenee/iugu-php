@@ -2,7 +2,7 @@
 
 use Mateusjatenee\Iugu\Iugu;
 use Mateusjatenee\Iugu\Resources\Charge;
-use Mateusjatenee\Iugu\Tests\Traits\HelpersTrait;
+use Mateusjatenee\Iugu\Tests\Integration\Traits\HelpersTrait;
 
 class ChargeTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
             'email' => 'teste@superteste.abc',
             'items' => [
                 'description' => 'Item Teste',
-                'quantity'    => '1',
+                'quantity' => '1',
                 'price_cents' => '100',
             ],
         ]);
