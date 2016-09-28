@@ -26,7 +26,12 @@ class Charge extends Resource
 
     public function setInformation(array $data)
     {
-        $this->token = $data['token'];
+        if ($this->bank_slip) {
+            $this->method = 'bank_slip';
+        } else {
+            $this->token = $data['token'];
+        }
+
         $this->email = $data['email'];
         $this->items = $data['items'];
 
