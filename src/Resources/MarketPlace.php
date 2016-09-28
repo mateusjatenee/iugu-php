@@ -23,18 +23,38 @@ class MarketPlace extends Resource
 
     protected $item_root = null;
 
-    public function requestVerification(array $data)
+    public function setVerificationInformation(array $data)
     {
         $this->name = "accounts/{$this->account_id}/request_verification";
 
         $this->attributes = [];
 
         foreach ($data as $key => $attribute) {
-            $this->attributes[$key] = $attribute;
+            $this->attributes['data'][$key] = $attribute;
         }
 
-        return parent::save();
+        return $this;
+    }
 
+    public function setSubAccountID($account_id)
+    {
+        $this->account_id = $account_id;
+    }
+
+    public function findSubAccount($account_id)
+    {
+        $this->name = 'accounts';
+
+        return $this->find($this->account_id);
+    }
+
+    public function setWithDrawInformation($account_id, array $data)
+    {
+        $this->name = "accounts/{$account_id}/request_withdraw";
+
+        $this->attributes = [];
+
+        $this->amount = $data['amount'];
     }
 
     public function setSubAccountInformation(array $data)
@@ -46,6 +66,11 @@ class MarketPlace extends Resource
         }
 
         return $this;
+    }
+
+    public function verify()
+    {
+        return $this->save();
     }
 
 }
