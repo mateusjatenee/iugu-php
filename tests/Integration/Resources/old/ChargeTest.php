@@ -17,7 +17,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
 
         $charge = new Charge();
 
-        $charge->charge([
+        $charge->setInformation([
             'token' => $token->id,
             'email' => 'teste@superteste.abc',
             'items' => [
@@ -25,7 +25,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
                 'quantity' => '1',
                 'price_cents' => '100',
             ],
-        ]);
+        ])->charge();
 
         $this->assertNotNull($charge);
         $this->assertNotNull($charge->invoice_id);

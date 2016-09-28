@@ -21,13 +21,18 @@ class Charge extends Resource
 
     protected $item_root = null;
 
-    public function charge(array $data)
+    public function setInformation(array $data)
     {
         $this->token = $data['token'];
         $this->email = $data['email'];
         $this->items = $data['items'];
         $this->payer = $data['payer'] ?? null;
 
-        $this->save();
+        return $this;
+    }
+
+    public function charge()
+    {
+        return $this->save();
     }
 }
