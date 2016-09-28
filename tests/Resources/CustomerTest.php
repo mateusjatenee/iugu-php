@@ -25,4 +25,10 @@ class CustomerTest extends TestCase
         $this->assertEquals($this->customer->name, 'John');
         $this->assertEquals($this->customer->email, 'foo@bar.com');
     }
+
+    /** @test */
+    public function it_has_the_correct_identifiers()
+    {
+        $this->assertEquals('customers', $this->customer->getResourceName());
+    }
 }
